@@ -585,7 +585,7 @@ require('lazy').setup({
             tabSize = 2,
           },
         },
-        -- pyright = {},
+        pyright = {},
         rust_analyzer = {
           filetypes = { 'rust' },
           settings = {
@@ -640,6 +640,7 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'black', -- Used to format python
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -687,7 +688,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        python = { 'black' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
