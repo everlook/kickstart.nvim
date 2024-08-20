@@ -37,4 +37,18 @@ return {
       }
     end,
   },
+  {
+    'hedyhli/outline.nvim',
+    ft = { 'rust', 'go' },
+    config = function()
+      -- Example mapping to toggle outline
+      vim.keymap.set('n', '<leader>o', '<cmd>Outline<CR>', { desc = 'Toggle Outline' })
+
+      require('outline').setup {
+        outline_window = {
+          auto_close = true,
+        },
+      }
+    end,
+  },
 }
